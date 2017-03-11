@@ -18,10 +18,10 @@ def upload_location(instance, filename):
 class Post(models.Model):
     title = models.CharField(max_length=120)
     slug = models.SlugField(unique=True)
-    image = models.ImageField(upload_to=upload_location,
-            null=True,
-            blank=True,
-            width_field="width_field",
+    image = models.ImageField(upload_to=upload_location, 
+            null=True, 
+            blank=True, 
+            width_field="width_field", 
             height_field="height_field")
     height_field = models.IntegerField(default=0)
     width_field = models.IntegerField(default=0)
@@ -62,3 +62,13 @@ def pre_save_post_receiver(sender, instance, *args, **kwargs):
 
 
 pre_save.connect(pre_save_post_receiver, sender=Post)
+
+
+
+
+
+
+
+
+
+
